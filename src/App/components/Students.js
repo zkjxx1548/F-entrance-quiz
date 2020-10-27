@@ -6,62 +6,12 @@ class Students extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      // data: [
-      //   {
-      //     id: 1,
-      //     name: 'zhou'
-      //   },
-      //   {
-      //     id: 2,
-      //     name: 'zhou'
-      //   },
-      //   {
-      //     id: 3,
-      //     name: 'zhou'
-      //   },
-      //   {
-      //     id: 4,
-      //     name: 'zhou'
-      //   },
-      //   {
-      //     id: 5,
-      //     name: 'zhou'
-      //   },
-      //   {
-      //     id: 6,
-      //     name: 'zhou'
-      //   },
-      //   {
-      //     id: 7,
-      //     name: 'zhou'
-      //   },
-      //   {
-      //     id: 8,
-      //     name: 'zhou'
-      //   },
-      //   {
-      //     id: 9,
-      //     name: 'zhou'
-      //   },
-      //   {
-      //     id: 10,
-      //     name: 'zhou'
-      //   },
-      //   {
-      //     id: 11,
-      //     name: 'zhou'
-      //   },
-      //   {
-      //     id: 12,
-      //     name: 'zhou'
-      //   }
-      // ]
       data: [],
     };
   }
 
   componentDidMount = () => {
-    fetch('http://localhost:8080/students', {
+    fetch('http://localhost:8080/get/students', {
       method: 'GET',
     })
       .then((res) => {
@@ -85,11 +35,21 @@ class Students extends Component {
     return newData;
   };
 
+  postNewStudent = (name) => {
+    fetch('http://localhost:8080/add/student', {
+      method: 'POST',
+      body: name,
+    });
+  };
+
   keyUpButton = (e) => {
     if (e.keyCode === 13) {
+      const newData = this.getNewData();
+      const studentName = newData[newData.length - 1].name;
       this.setState({
-        data: this.getNewData,
+        data: newData,
       });
+      this.postNewStudent(studentName);
     }
   };
 
