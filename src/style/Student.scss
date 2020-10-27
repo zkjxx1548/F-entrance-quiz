@@ -1,0 +1,9 @@
+@import './variables';
+
+.student {
+  padding: 15px;
+  margin: 10px;
+  background-color: $light-gray;
+  flex: 0 0 12.5%;
+  text-align: center;
+}

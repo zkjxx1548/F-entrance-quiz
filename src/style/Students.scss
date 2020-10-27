@@ -1,0 +1,13 @@
+@import './variables';
+
+.student-list {
+  .list {
+    display: flex;
+    flex-flow: row wrap;
+
+    #add_student-button {
+      background-color: inherit;
+      border: 1px solid $gray;
+    }
+  }
+}

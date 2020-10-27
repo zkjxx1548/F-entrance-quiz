@@ -12,6 +12,7 @@
     "lint": "eslint \"src/\" --cache --fix --format table"
   },
   "dependencies": {
+    "http-proxy-middleware": "^1.0.6",
     "node-sass": "^4.14.1",
     "react": "^16.9.0",
     "react-dom": "^16.9.0"
@@ -48,5 +49,6 @@
   "lint-staged": {
     "*.{js,css,scss,md}": "prettier --write",
     "*.js": "eslint \"src/\" --cache --fix --format table"
-  }
+  },
+  "proxy": "http://localhost:8080"
 }

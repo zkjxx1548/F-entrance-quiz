@@ -1,2 +1,6 @@
+@import '../style/variables';
+
 .App {
+  background-color: $bg-gray;
+  padding: 40px 20px;
 }
