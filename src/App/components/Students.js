@@ -6,11 +6,13 @@ class Students extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      // TODO GTB-工程实践: - 建议更符合业务的命名
       data: [],
     };
   }
 
   componentDidMount = () => {
+    // TODO GTB-工程实践: * 建议把数据请求提取到单独的service
     fetch('http://localhost:8080/get/students', {
       method: 'GET',
     })
@@ -25,6 +27,7 @@ class Students extends Component {
   };
 
   getNewData = () => {
+    // TODO GTB-知识点: - 使用React 绑定数据的获取值，就不需要通过document去获取了
     const name = document.getElementById('add_student-button').value;
     const newData = this.state.data.concat([
       {
@@ -55,6 +58,7 @@ class Students extends Component {
 
   render() {
     return (
+      // TODO GTB-知识点: - 没有使用语义标签
       <div className="student-list">
         <h1 className="title">学员列表</h1>
         <div className="list">
